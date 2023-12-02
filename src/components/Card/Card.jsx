@@ -1,20 +1,38 @@
-import React from 'react'
+import React from 'react';
+import './Card.css';
 
-const Card = ({question, onAnswer}) => {
-    // destructure props from question
-    const {id, question_text, answers} = question;
+const Card = ({ question, onAnswer, finalMessage, onReset, onBack, onNext }) => {
+  // destructure props from question
+  const { question_text, answers } = question;
+  
+  const outcomeId = finalMessage?.id.replace(/_/g, ' ');
+  
+
   return (
     <div className="question-card">
-    <h3>{question_text}</h3>
-    <div className="answer-options">
-      {answers&& answers.map((answer) => (
-        <button key={answer.id} onClick={() => onAnswer(id, answer)}>
-          {answer.label}
-        </button>
-      ))}
+      {finalMessage ? (
+        <div><h2>{outcomeId} </h2>
+        <p>{finalMessage.text}</p>
+        <button onClick={onReset}>Reset</button></div> 
+        
+      ) : (
+        <>
+        <button onClick={onBack}>back</button>
+        <button onClick={onNext}>forward</button>
+          <h3>{question_text}</h3>
+          <div className="answer-options">
+           
+            {answers &&
+              answers.map((answer, index) => (
+                <button key={answer.id} onClick={() => onAnswer(index)}>
+                  {answer.label}
+                </button>
+              ))}
+          </div>
+        </>
+      )}
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
