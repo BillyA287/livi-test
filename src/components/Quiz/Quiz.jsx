@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import questions from "../../data/form.js";
+import data from "../../data/form.js";
 import Card from "../Card/Card.jsx";
 
 const Quiz = () => {
@@ -8,7 +8,7 @@ const Quiz = () => {
 
   const totalScore = (selectedOption) => {
     // create current question position as we use this to access the score
-    const currentQuestion = questions.questions[currentQuestionPosition];
+    const currentQuestion = data.questions[currentQuestionPosition];
     // when an answer is clicked we need to check if current question we want to access is in range
     console.log(selectedOption);
     if (
@@ -31,20 +31,20 @@ const Quiz = () => {
   // result message function
   const finalMessage = () => {
     // Check if the user has completed the questionnaire
-    if (currentQuestionPosition === questions.questions.length - 1) {
+    if (currentQuestionPosition === data.questions.length - 1) {
       // Determine the outcome based on the user's score
       let outcome;
 
       if (currentScore < 5) {
-        outcome = questions.outcomes.find(
+        outcome = data.outcomes.find(
           (outcome) => outcome.id === "rest_and_come_back_later"
         );
       } else if (currentScore >= 5 && currentScore < 49) {
-        outcome = questions.outcomes.find(
+        outcome = data.outcomes.find(
           (outcome) => outcome.id === "see_a_doctor"
         );
       } else {
-        outcome = questions.outcomes.find(
+        outcome = data.outcomes.find(
           (outcome) => outcome.id === "go_to_emergency_room"
         );
       }
@@ -58,7 +58,7 @@ const Quiz = () => {
   // calculate current question position in list and display to user
   const showProgress = () => {
     const position = currentQuestionPosition + 1;
-    const totalQuestions = questions.questions.length;
+    const totalQuestions = data.questions.length;
     return `${position}/${totalQuestions}`;
   };
 
@@ -83,13 +83,12 @@ const Quiz = () => {
 
 
   const currentQuestion = () => {
-    return questions.questions[currentQuestionPosition];
+    return data.questions[currentQuestionPosition];
   };
 
   if (currentQuestion()) {
     const position = showProgress();
-    const lastMessage =
-      currentQuestionPosition === questions.questions.length - 1;
+    const lastMessage = currentQuestionPosition === data.questions.length - 1;
     const outcome = lastMessage ? finalMessage() : null; // Get the outcome
 
     return (
@@ -102,7 +101,7 @@ const Quiz = () => {
           onAnswer={(selectedOption) => totalScore(selectedOption)}
           finalMessage={outcome} // Pass the outcome as a prop
           currentQuestionPosition={currentQuestionPosition}
-          questions={questions}
+          data={data}
           onReset={handleReset}
           onBack={handleBack}
           onNext={handleNext}

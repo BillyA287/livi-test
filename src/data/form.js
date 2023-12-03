@@ -1,5 +1,5 @@
 
-const questions = {
+const data = {
 	"questions": [
 		{	
 			"id": "is_heartburn_known",
@@ -134,4 +134,4 @@ const questions = {
 	]
 }
 
-export default questions;
+export default data;
