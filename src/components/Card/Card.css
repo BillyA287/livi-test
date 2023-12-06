@@ -11,41 +11,36 @@
 }
 .nav-back.disabled {
   background-color: #ccc;
-  /* Change the background color for the disabled state */
+
   color: #666;
-  /* Change the text color for the disabled state */
+  
 }
 
 .nav-back.active {
   border: 0;
   background-color: #fff;
+  position: relative; 
 }
 
 .nav-back.active:hover {
-  display: inline-block;
-  position: relative;
-  color:
-    #0087ca;
-
+  color: #0087ca;
+  text-decoration: underline; 
 }
 
 .nav-back.active:after {
   content: '';
   position: absolute;
   width: 100%;
-  transform: scaleX(0);
   height: 2px;
-  bottom: 0;
+  bottom: -4px; 
   left: 0;
-  background-color:
-    teal;
+  background-color: teal;
   transform-origin: bottom right;
+  transform: scaleX(0);
   transition: transform 0.25s ease-out;
-
-
 }
 
-.nav-back.active:after {
+.nav-back.active:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -100,6 +95,8 @@ p.current-position {
 }
 .booking-btn p{
   grid-column: span 11;
+  font-family: 'Montserrat', sans-serif;
+
 }
 .booking-btn img{
   margin-top: 10px;
