@@ -9,6 +9,7 @@ const Card = ({
   finalMessage,
   onBack,
   onNext,
+  onReset,
   currentQuestionPosition,
   isOptionSelected,
   position,
@@ -58,7 +59,7 @@ const Card = ({
               </div>
             )}
             <p>
-              <a href="/"> Back to the start of the screen</a>
+            <a href="https://billya287.github.io/livi-test/" onClick={onReset}>Reset</a>
             </p>
           </div>
         ) : (

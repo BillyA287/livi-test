@@ -42,6 +42,12 @@ const Quiz = () => {
     const position = currentQuestionPosition + 1;
     const totalQuestions = data.questions.length;
     return `${position}/${totalQuestions}`;
+    
+  };
+
+  const handleReset = () => {
+    setCurrentScore(0);
+    setSelectedOptionIndex(null);
   };
 
   // Function to reset selected option index
@@ -56,6 +62,8 @@ const Quiz = () => {
       setSelectedOptionIndex(null);
     }
   };
+
+  
 
   // Function to handle going to the next question
   const handleNext = () => {
@@ -93,6 +101,7 @@ const Quiz = () => {
           currentQuestionPosition={currentQuestionPosition}
           onBack={handleBack}
           onNext={handleNext}
+          onReset={handleReset}
           selectedOptionIndex={selectedOptionIndex !== null}
           position={position}
         />
