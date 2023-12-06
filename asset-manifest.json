@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/livi-test/static/css/main.3ba3c7b2.css",
-    "main.js": "/livi-test/static/js/main.33caa7f2.js",
+    "main.css": "/livi-test/static/css/main.921a5580.css",
+    "main.js": "/livi-test/static/js/main.6e5abf54.js",
     "static/js/787.9fce22ca.chunk.js": "/livi-test/static/js/787.9fce22ca.chunk.js",
     "index.html": "/livi-test/index.html",
     "static/media/left.svg": "/livi-test/static/media/left.f4e86681e3a0dce2202974f85943b541.svg",
     "static/media/right.svg": "/livi-test/static/media/right.824d6c3394157b95601056bacf502d2c.svg",
-    "main.3ba3c7b2.css.map": "/livi-test/static/css/main.3ba3c7b2.css.map",
-    "main.33caa7f2.js.map": "/livi-test/static/js/main.33caa7f2.js.map",
+    "main.921a5580.css.map": "/livi-test/static/css/main.921a5580.css.map",
+    "main.6e5abf54.js.map": "/livi-test/static/js/main.6e5abf54.js.map",
     "787.9fce22ca.chunk.js.map": "/livi-test/static/js/787.9fce22ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ba3c7b2.css",
-    "static/js/main.33caa7f2.js"
+    "static/css/main.921a5580.css",
+    "static/js/main.6e5abf54.js"
   ]
 }
