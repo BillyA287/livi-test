@@ -43,11 +43,7 @@ const Quiz = () => {
     return `${position}/${totalQuestions}`;
   };
 
-  const handleReset = () => {
-    setCurrentQuestionPosition(0);
-    setCurrentScore(0);
-    setSelectedOptionIndex(null);
-  };
+
 
   const nextUserQuestion = () => {
     setSelectedOptionIndex(null);
@@ -90,18 +86,19 @@ const Quiz = () => {
 
     return (
       <>
-        <p>{position}</p>
-        <p>current score: {currentScore}</p>
+   
+        {/* <p>current score: {currentScore}</p> */}
         <Card
           key={currentQuestion().id}
           question={currentQuestion()}
           onAnswer={(selectedOption) => totalScore(selectedOption)}
           finalMessage={outcome}
           currentQuestionPosition={currentQuestionPosition}
-          onReset={handleReset}
+          
           onBack={handleBack}
           onNext={handleNext}
           selectedOptionIndex={selectedOptionIndex !== null}
+          position={position}
         />
       </>
     );

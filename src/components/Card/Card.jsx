@@ -1,7 +1,9 @@
 import React from 'react';
 import './Card.css';
+import Back from '../../assets/left.svg'
+import Right from '../../assets/right.svg'
 
-const Card = ({ question, onAnswer, finalMessage, onReset, onBack, onNext, currentQuestionPosition, isOptionSelected }) => {
+const Card = ({ question, onAnswer, finalMessage, onBack, onNext, currentQuestionPosition, isOptionSelected, position,handleAnswerClick }) => {
   const { question_text, answers } = question;
   const outcomeId = finalMessage?.id.replace(/_/g, ' ');
   const showBookingButton = finalMessage?.show_booking_button || false;
@@ -16,21 +18,32 @@ const Card = ({ question, onAnswer, finalMessage, onReset, onBack, onNext, curre
   
   return (
     <div className="question-card">
-      <button onClick={onBack} disabled={currentQuestionPosition === 0 || isOptionSelected}>Back</button>
+      <div className="question-card-container">
+
+
+     
+      <div className="nav-heading">
+        <button className={`nav-back ${currentQuestionPosition === 0 || isOptionSelected === 0  ? 'disabled' : 'active'}`} onClick={onBack} disabled={currentQuestionPosition === 0 }><img src={Back}/></button> <h3 className='title'>
+           Heartburn Checker
+        </h3>
+        <br/>
+       <p className='current-position'>{position}</p>
+      </div>
+     
       {finalMessage ? (
-        <div>
+        <div className='final-message-container'>
           <h2>{outcomeId} </h2>
           <p>{finalMessage.text}</p>
-          {showBookingButton && <button>Show Booking Button</button>}
-          <button onClick={onReset}>Reset</button>
+          {showBookingButton && <div className='booking-btn-container'> <button className='booking-btn'><p>Book a meeting</p><img src={Right} alt='right-arrow'/></button></div>}
+          <p><a href='/' > Back to the start of the screen</a></p>
         </div>
       ) : (
-        <>
+        <div className='question-body'>
           
   
-          <h3>{question_text}</h3>
+          <h3 className='question'>{question_text}</h3>
           <div className="answer-options">
-            {answers &&
+            {answers && 
               answers.map((answer, index) => (
                 <button
                   key={answer.id}
@@ -41,20 +54,25 @@ const Card = ({ question, onAnswer, finalMessage, onReset, onBack, onNext, curre
                   }}
                   disabled={isOptionSelected}
                 >
+                  
                   {answer.label}
                 </button>
               ))}
           </div>
-          <button
+          <div className="next-btn-container ">
+                <button className='next-btn '
   onClick={onNext}
->
-  Next
-</button>
-        </>
+> <p>Next</p>
+  <img src={Right} alt='right-arrow'/>
+</button>   
+          </div>
+   
+        </div>
       )}
       
 
 
+    </div>
     </div>
   );
 };

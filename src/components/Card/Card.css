@@ -1,4 +1,63 @@
 /* Card.css */
+.nav-heading {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.final-message-container a{
+  color: teal;
+}
+.nav-back.disabled {
+  background-color: #ccc;
+  /* Change the background color for the disabled state */
+  color: #666;
+  /* Change the text color for the disabled state */
+}
+
+.nav-back.active {
+  border: 0;
+  background-color: #fff;
+}
+
+.nav-back.active:hover {
+  display: inline-block;
+  position: relative;
+  color:
+    #0087ca;
+
+}
+
+.nav-back.active:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:
+    teal;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+
+
+}
+
+.nav-back.active:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.title {
+  grid-column: span 5/9;
+}
+
+p.current-position {
+  margin: 0;
+
+}
 
 .question-card {
   border: 1px solid #ccc;
@@ -7,34 +66,109 @@
   margin: 16px;
   padding: 16px;
   background-color: #fff;
+  grid-column: 9 span /12;
+
+}
+
+.question {
+  grid-column: span 12;
+}
+
+.question-body {
+  display: flex;
+  flex-flow: column;
+  padding: 20px;
 }
 
 .question-card h3 {
   font-size: 1.2em;
-  margin-bottom: 10px;
 }
 
+.booking-btn-container{
+  display: grid;
+}
+
+.booking-btn{
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 4px;
+  color: teal;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column: span 12;
+  display: grid;
+
+}
+.booking-btn p{
+  grid-column: span 11;
+}
+.booking-btn img{
+  margin-top: 10px;
+}
 .answer-options {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
 }
 
 .answer-options button {
   margin-bottom: 8px;
   padding: 8px;
   cursor: pointer;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  background-color: #fff;
+  color: teal;
   transition: background-color 0.3s;
+  grid-column: span 6;
 }
 
 .answer-options button:hover {
-  background-color: #0056b3;
+  background-color: lightblue;
+}
+
+.answer-options button.selected::after {
+  opacity: 1;
+  /* Show the tick image when the option is selected */
+}
+
+.next-btn-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 50px;
+}
+
+button.next-btn{
+  display: grid;
+  grid-column: span 12;
+  grid-template-columns: repeat(14, 1fr);
+}
+button.next-btn p {
+  margin-left: 20px;
+  grid-column: span 5/9;
+}
+
+button.next-btn img{
+  margin-top: 10px;
+  grid-column: span 1/15;
+}
+.next-btn{
+  margin-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 4px;
+  color: teal;
+  justify-content: space-between;
 }
 
 p {
   margin-top: 10px;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 700px) {
+  .question-card {
+    grid-column: 5 span /11;
+  }
 }

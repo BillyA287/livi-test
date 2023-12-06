@@ -1,3 +1,21 @@
+Livi test instructions
+
+Requirements
+● As a user, I can navigate the questionnaire in a UI. Mimic this design, or make up an
+even nicer one.
+● As a user, I can navigate back and forth in the questionnaire.
+● As a user, after answering all the questions, I am presented with suggested actions
+to take.
+● As a user that has completed the questionnaire, I can restart the questionnaire and
+take it again.
+● As a user, I can visualise the progress of the questionnaire as I answer the
+questions.
+
+The submission will be evaluated on code structure and semantics, components reusability
+and testing strategy.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

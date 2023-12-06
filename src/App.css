@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(15,1fr);
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App-logo {
