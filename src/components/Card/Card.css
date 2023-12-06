@@ -54,6 +54,20 @@ p.current-position {
 
 }
 
+.reset-btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: teal; 
+  text-decoration: underline;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin-top: 10px;
+}
+
+
+
 .question-card {
   border: 1px solid #ccc;
   border-radius: 8px;

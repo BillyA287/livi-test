@@ -47,8 +47,10 @@ const Card = ({
         {/* Render final message or question body */}
         {finalMessage ? (
           <div className="final-message-container">
+            <h1>Thank you for answering the questions! </h1>
             <h2>{outcomeId}</h2>
             <p>{finalMessage.text}</p>
+          
             {/* Render booking button if necessary */}
             {showBookingButton && (
               <div className="booking-btn-container">
@@ -56,11 +58,11 @@ const Card = ({
                   <p>Book a meeting</p>
                   <img src={Right} alt="right-arrow" />
                 </button>
+                
               </div>
+              
             )}
-            <p>
-            <a href="https://billya287.github.io/livi-test/" onClick={onReset}>Reset</a>
-            </p>
+              <button className='reset-btn' onClick={onReset}><p>Back to the start of the screen</p></button>
           </div>
         ) : (
           <div className="question-body">
@@ -92,6 +94,7 @@ const Card = ({
             </div>
           </div>
         )}
+        
       </div>
     </div>
   );

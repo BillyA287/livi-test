@@ -45,8 +45,10 @@ const Quiz = () => {
     
   };
 
+  // Function to reset quiz
   const handleReset = () => {
     setCurrentScore(0);
+    setCurrentQuestionPosition(0);
     setSelectedOptionIndex(null);
   };
 
